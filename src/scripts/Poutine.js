@@ -24,11 +24,12 @@ export default class Poutine {
 
       event.currentTarget.classList.add('is-active');
       this.selectedType = event.currentTarget.innerText;
-      updatePhoto();
+      this.updatePhoto();
     }
   }
 
   updatePhoto() {
-    this.element.img;
+    this.element.querySelector('img').src = `assets/images/${this.selectedType}.png`
+
   }
 }
