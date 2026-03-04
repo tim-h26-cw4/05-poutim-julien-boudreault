@@ -23,6 +23,21 @@ export default class Chef {
   }
 
   sendOrder() {
-    console.log('greg');
+    let compteurPoutine = 0;
+    const boutons = this.element.querySelectorAll('.js-type');
+
+    for (let i = 0; i < boutons.length; i++) {
+      const bouton = boutons[i];
+      if(bouton.classList.contains('is-active')){
+        compteurPoutine++;
+      }
+    }
+
+    this.container.innerHTML = ''
+    const paragraphe = document.createElement('p');
+    paragraphe.innerText = `Nombre total de poutine(s) : ${compteurPoutine}`;
+    this.container.appendChild(paragraphe);
+    
   }
+  
 }
